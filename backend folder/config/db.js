@@ -6,7 +6,9 @@ const connectDB = async () => {
     if (!uri) {
       throw new Error('MONGODB_URI must be defined in .env');
     }
-    await mongoose.connect(uri, {
+    // Connect to coinbase_clone database
+    const fullUri = uri.includes('coinbase_clone') ? uri : `${uri}/coinbase_clone`;
+    await mongoose.connect(fullUri, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
