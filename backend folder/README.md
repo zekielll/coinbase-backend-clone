@@ -14,6 +14,7 @@ Backend API for the Coinbase clone assignment.
 
 1. Copy `.env.example` to `.env`.
 2. Configure `MONGODB_URI`, `JWT_SECRET`, and `FRONTEND_URL`.
+   - Do not commit `.env` to GitHub; it should remain local and secret.
 3. Install dependencies:
 
 ```bash
