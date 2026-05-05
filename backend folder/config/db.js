@@ -15,7 +15,11 @@ const connectDB = async () => {
     console.log('MongoDB connected');
   } catch (error) {
     console.error('MongoDB connection failed:', error.message);
-    process.exit(1);
+    console.log('Server will continue without database connection for testing purposes');
+    // Don't exit process in development - allow server to start for API testing
+    if (process.env.NODE_ENV === 'production') {
+      process.exit(1);
+    }
   }
 };
 
